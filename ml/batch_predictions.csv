@@ -1,0 +1,4 @@
+congestion_risk,anomaly_flag,score,region
+LOW,False,0.7,Region_A
+LOW,False,0.7,Region_B
+HIGH,False,0.8,Region_C

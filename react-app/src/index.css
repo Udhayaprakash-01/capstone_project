@@ -1,0 +1,135 @@
+/* ✅ Import professional font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* ✅ ROOT VARIABLES (monochromatic clean theme) */
+:root {
+  --text: #333;
+  --text-muted: #666;
+  --bg: #f8f9fa;
+  --card-bg: #ffffff;
+  --border: #e5e5e5;
+  --primary: #111;
+  --hover: #333;
+  --shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* ✅ GLOBAL SETTINGS */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+}
+
+/* ✅ ROOT CONTAINER */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ✅ HEADINGS */
+h1, h2 {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text);
+}
+
+h1 {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* ✅ SIDEBAR */
+.sidebar {
+  background: var(--primary);
+  color: white;
+  padding: 20px;
+}
+
+/* ✅ SIDEBAR TITLE */
+.sidebar-title {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+}
+
+/* ✅ MENU ITEMS */
+.menu-item {
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #ddd;
+  transition: all 0.2s ease;
+}
+
+.menu-item:hover {
+  background-color: var(--hover);
+  color: #fff;
+}
+
+/* ✅ ACTIVE MENU */
+.menu-item.active {
+  background-color: #fff;
+  color: #111;
+  font-weight: 500;
+}
+
+/* ✅ MAIN CONTENT AREA */
+.content {
+  padding: 25px;
+  background: var(--bg);
+  flex: 1;
+}
+
+/* ✅ CARDS */
+.card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+/* ✅ GRID SYSTEM */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* ✅ TEXT HELPERS */
+.small-text {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* ✅ EMPTY STATE */
+.empty {
+  text-align: center;
+  margin-top: 100px;
+  color: var(--text-muted);
+}
+
+/* ✅ SCROLL FIX */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
