@@ -76,12 +76,13 @@ JOIN dim_region r ON f.region_id = r.region_id;
 
 -> REST APIs (FastAPI)
 
-    Endpoint                          Description
-/usage/summary                    Overall usage metrics
-/usage/region/{region}            Region-level usage
-/usage/peak                       Peak traffic insights
-/usage/features/{region}          ML feature extraction
-/predict-usage-risk               ML-based congestion prediction
+| Endpoint | Description |
+|---|---|
+| `/usage/summary` | Overall usage metrics |
+| `/usage/region/{region}` | Region-level usage |
+| `/usage/peak` | Peak traffic insights |
+| `/usage/features/{region}` | ML feature extraction |
+| `/predict-usage-risk` | ML-based congestion prediction |
 
 -> React Dashboard
 
@@ -120,8 +121,9 @@ python ml/batch_score.py
 Output:
 ml/batch_predictions.csv
 
-Project Structure:
+Project Structure
 
+```
 capstone_project/
 │
 ├── data/
@@ -155,7 +157,7 @@ capstone_project/
 └── docs/
     ├── architecture-diagram.png
     └── design_document.md
-
+```
 
 How to Run:
 
