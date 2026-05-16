@@ -4,8 +4,9 @@ Telecom Network Intelligence System
 The Telecom Network Intelligence System is an end-to-end data engineering and analytics platform designed to process, analyze, and predict telecom network activity. The system handles high-volume telecom datasets (CDR, SMS, and internet traffic) and provides real-time insights along with machine learning–based congestion risk predictions.
 This project demonstrates a complete data pipeline architecture, integrating distributed data processing, workflow orchestration, data warehousing, backend APIs, frontend dashboards, and machine learning.
 
-Architecture:
+Project Architecture
 
+```
 Data Sources (CSV)
         ↓
 Airflow Orchestration (DAG)
@@ -23,6 +24,7 @@ FastAPI Backend (REST APIs)
 React Frontend Dashboard
         ↓
 Machine Learning (Prediction Layer)
+```
 
 
 Tech Stack:
