@@ -26,53 +26,56 @@ React Frontend Dashboard
 Machine Learning (Prediction Layer)
 ```
 
+Tech Stack
 
-Tech Stack:
+1. Data Engineering
 
-Data Engineering
-
-PySpark – Distributed data processing
-Apache Airflow – Workflow orchestration
-SQL (SQLite/PostgreSQL/MySQL) – Data warehousing
+- PySpark – Distributed data processing
+- Apache Airflow – Workflow orchestration
+- SQL (SQLite/PostgreSQL/MySQL) – Data warehousing
 
 2. Backend
 
-FastAPI – REST API layer
-Pydantic – Data validation
-SQLAlchemy – Database interaction
+- FastAPI – REST API layer
+- Pydantic – Data validation
+- SQLAlchemy – Database interaction
 
 3. Frontend
 
-React (Vite) – UI dashboard
-Axios – API integration
+- React (Vite) – UI dashboard
+- Axios – API integration
 
 4. Machine Learning
 
-Scikit-learn – Model training
-Joblib – Model persistence
+- Scikit-learn – Model training
+- Joblib – Model persistenc
 
 
 Features:
 
--> Data Pipeline
+Data Pipeline
 
-Ingest telecom CSV data
-Validate and filter datasets
-Perform distributed ETL using PySpark
-Store data in optimized Parquet format
+- Ingest telecom CSV data
+- Validate and filter datasets
+- Perform distributed ETL using PySpark
+- Store data in optimized Parquet format
+- 
+Data Warehouse (Star Schema)
 
--> Data Warehouse (Star Schema)
+Tables
 
-1.fact_usage
-2.dim_time
-3.dim_region
+1. `fact_usage`
+2. `dim_time`
+3. `dim_region`
 
 Supports analytical queries such as:
 
+```sql
 SELECT r.region_name, t.hour, SUM(f.call_count)
 FROM fact_usage f
 JOIN dim_time t ON f.time_id = t.time_id
 JOIN dim_region r ON f.region_id = r.region_id;
+```
 
 -> REST APIs (FastAPI)
 
@@ -84,42 +87,53 @@ JOIN dim_region r ON f.region_id = r.region_id;
 | `/usage/features/{region}` | ML feature extraction |
 | `/predict-usage-risk` | ML-based congestion prediction |
 
--> React Dashboard
+React Dashboard
 
-Usage Dashboard → KPI metrics
-Region Explorer → Hourly usage analysis
-Peak Traffic    → Top usage trends
-Risk Prediction → ML-driven predictions
+- **Usage Dashboard** → KPI metrics
+- **Region Explorer** → Hourly usage analysis
+- **Peak Traffic** → Top usage trends
+- **Risk Prediction** → ML-driven predictions
 
-
--> Machine Learning
+Machine Learning
 
 Problem
-Predict telecom network congestion risk
+
+Predict telecom network congestion risk.
 
 Features
-Average usage
-Growth rate
-Peak ratio
-Variability
+
+- Average usage
+- Growth rate
+- Peak ratio
+- Variability
 
 Model
-Random Forest Classifier
 
-Output
-{  
-"congestion_risk": "HIGH",  
-"anomaly_flag": true,  
-"score": 0.92
+- Random Forest Classifier
+
+Prediction Output
+
+```json
+{
+  "congestion_risk": "HIGH",
+  "anomaly_flag": true,
+  "score": 0.92
 }
+```
 
--> Batch Scoring
+Batch Scoring
 
 Generate predictions for all regions:
-python ml/batch_score.py
 
-Output:
+```bash
+python ml/batch_score.py
+```
+
+Output
+
+```text
 ml/batch_predictions.csv
+```
 
 Project Structure
 
@@ -159,47 +173,68 @@ capstone_project/
     └── design_document.md
 ```
 
-How to Run:
+How to Run
 
 1️⃣ Backend (FastAPI)
+
+```bash
 uvicorn api.main:app --reload
+```
 
 Open:
-http://127.0.0.1:8000/docs
 
+```text
+http://127.0.0.1:8000/docs
+```
+
+---
 
 2️⃣ Frontend (React)
+
+```bash
 cd react-app
 npm install
 npm run dev
+```
 
 Open:
-http://localhost:5173
 
+```text
+http://localhost:5173
+```
+
+---
 
 3️⃣ Train ML Model
-python ml/train_model.py
 
+```bash
+python ml/train_model.py
+```
+
+---
 
 4️⃣ Batch Predictions
+
+```bash
 python ml/batch_score.py
+```
 
-Key Highlights:
+Key Highlights
 
-✅ End-to-end data pipeline
-✅ Scalable Spark processing
-✅ Airflow orchestration
-✅ Star schema warehouse
-✅ Production-ready FastAPI APIs
-✅ Interactive React dashboard
-✅ ML-based prediction layer
+- ✅ End-to-end data pipeline
+- ✅ Scalable Spark processing
+- ✅ Airflow orchestration
+- ✅ Star schema warehouse
+- ✅ Production-ready FastAPI APIs
+- ✅ Interactive React dashboard
+- ✅ ML-based prediction layer
 
-Use Cases:
+Use Cases
 
-Telecom traffic monitoring
-Network congestion detection
-Predictive analytics
-Capacity planning
+- Telecom traffic monitoring
+- Network congestion detection
+- Predictive analytics
+- Capacity planning
 
 Author:
 
