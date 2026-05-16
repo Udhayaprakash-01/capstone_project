@@ -239,7 +239,6 @@ Use Cases
 Author:
 
 Udhaya Prakash M
-Data Engineering & Analytics Enthusiast
 
 Final Note:
 
